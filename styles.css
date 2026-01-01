@@ -1,0 +1,90 @@
+/* TODO: use vw unit or use clamp to set min and max font size */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  font-family: "Figtree", sans-serif;
+}
+
+body {
+  background: hsl(47, 88%, 63%);
+}
+
+/* ensures images do not overflow width of viewport */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  border: 1px solid #111111;
+  box-shadow: 8px 8px 0 black;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.wordsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: left;
+}
+
+.yellowBlock {
+  background-color: #f4d04e;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 150%;
+  letter-spacing: 0;
+  padding: 8px;
+  text-align: center;
+}
+
+#publishDate {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.headTitle {
+  color: #111111;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+@media (hover: hover) {
+  .headTitle :hover {
+    color: #f4d04e;
+  }
+}
+
+.desc {
+  color: #6b6b6b;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.personContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.personAvatar {
+  border-radius: 50%;
+}
+
+.personName {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 150%;
+  letter-spacing: 0;
+}
