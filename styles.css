@@ -1,27 +1,40 @@
 /* TODO: use vw unit or use clamp to set min and max font size */
+/* TODO: convert to rem */
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
   font-family: "Figtree", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: hsl(47, 88%, 63%);
 }
 
-/* ensures images do not overflow width of viewport */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(20rem, 85vw, 24rem);
+  max-height: 90vh;
+  overflow: auto;
+  background-color: white;
   border: 1px solid #111111;
+  border-radius: 20px;
   box-shadow: 8px 8px 0 black;
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 24px;
+}
+
+.cardPic img {
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .wordsContainer {
@@ -34,17 +47,19 @@ img {
 .yellowBlock {
   background-color: #f4d04e;
   color: #111111;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
   font-weight: 800;
   line-height: 150%;
   letter-spacing: 0;
-  padding: 8px;
+  padding: 4px 12px;
   text-align: center;
+  width: min-content;
+  border-radius: 4px;
 }
 
 #publishDate {
   color: #111111;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
   font-weight: 500;
   line-height: 150%;
   letter-spacing: 0;
@@ -52,21 +67,21 @@ img {
 
 .headTitle {
   color: #111111;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 800;
   line-height: 150%;
   letter-spacing: 0;
 }
 
 @media (hover: hover) {
-  .headTitle :hover {
+  .headTitle:hover {
     color: #f4d04e;
   }
 }
 
 .desc {
   color: #6b6b6b;
-  font-size: 16px;
+  font-size: clamp(0.875, 2.5vw, 1rem);
   line-height: 150%;
   letter-spacing: 0;
 }
@@ -77,13 +92,15 @@ img {
   align-items: center;
 }
 
-.personAvatar {
+#personAvatar {
   border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
 }
 
 .personName {
   color: #111111;
-  font-size: 14px;
+  font-size: clamp(0.875, 2.5vw, 1rem);
   font-weight: 800;
   line-height: 150%;
   letter-spacing: 0;
